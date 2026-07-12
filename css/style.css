@@ -159,6 +159,7 @@ nav.tabbar button.active { color: var(--accent); }
 .field.assign-target input {
   border-color: var(--accent);
   background: #eaf1ff;
+  color: #1a1a1a;
 }
 
 .chip-list {

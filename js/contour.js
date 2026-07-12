@@ -9,14 +9,39 @@ window.MT_CONTOUR = (function () {
       script.src = window.MT_CONFIG.OPENCV_JS_URL;
       script.async = true;
       script.onload = () => {
-        const check = () => {
-          if (window.cv && window.cv.Mat) resolve();
-          else setTimeout(check, 50);
-        };
-        if (window.cv && window.cv.onRuntimeInitialized !== undefined) {
-          cv.onRuntimeInitialized = () => resolve();
-        } else {
+        try {
+          if (window.cv && typeof window.cv.then === "function") {
+            // cvがPromiseとしてexportされているビルド: 解決を待つ
+            window.cv
+              .then((mod) => {
+                window.cv = mod;
+                resolve();
+              })
+              .catch(reject);
+            return;
+          }
+          if (typeof window.cv === "function") {
+            // Emscripten MODULARIZE形式: cv()を呼ぶと初期化済みモジュールを解決するPromiseが返る
+            window
+              .cv()
+              .then((mod) => {
+                window.cv = mod;
+                resolve();
+              })
+              .catch(reject);
+            return;
+          }
+          if (window.cv && window.cv.onRuntimeInitialized !== undefined) {
+            cv.onRuntimeInitialized = () => resolve();
+            return;
+          }
+          const check = () => {
+            if (window.cv && window.cv.Mat) resolve();
+            else setTimeout(check, 50);
+          };
           check();
+        } catch (e) {
+          reject(e);
         }
       };
       script.onerror = () => reject(new Error("OpenCV.jsの読み込みに失敗しました"));

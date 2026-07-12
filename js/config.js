@@ -5,7 +5,7 @@ window.MT_CONFIG = {
   VISION_API_KEY: "AIzaSyDdOcD5baNcd0GHmM3bxG5mvxHISNXZ5KA",
 
   // OAuth 2.0 クライアントID(種類: ウェブアプリケーション)
-  GOOGLE_CLIENT_ID: "YOUR_OAUTH_CLIENT_ID.apps.googleusercontent.com",
+  GOOGLE_CLIENT_ID: "1031944335597-dre9veksuon08sk0pl7b8aduvmqc86d4.apps.googleusercontent.com",
 
   // Google Drive API に要求するスコープ(アプリが作成したファイルのみアクセス)
   DRIVE_SCOPE: "https://www.googleapis.com/auth/drive.file",

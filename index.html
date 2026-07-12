@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2f6fed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="名刺管理">
+<title>名刺管理</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>🗂️ 名刺管理</h1>
+    <div id="header-actions"></div>
+  </header>
+
+  <main id="view-root"></main>
+
+  <nav class="tabbar" id="tabbar" hidden>
+    <button data-view="list"><span class="icon">📇</span>一覧</button>
+    <button data-view="scan"><span class="icon">📷</span>スキャン</button>
+  </nav>
+
+  <div id="toast-root"></div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/util.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/drive.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/camera.js"></script>
+  <script src="./js/contour.js"></script>
+  <script src="./js/ocr.js"></script>
+  <script src="./js/views/list.js"></script>
+  <script src="./js/views/detail.js"></script>
+  <script src="./js/views/scan.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

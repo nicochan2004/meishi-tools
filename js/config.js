@@ -2,7 +2,7 @@
 // README.md の手順に従って、下記2つの値を自分のGoogle Cloud Consoleで発行した値に置き換えてください。
 window.MT_CONFIG = {
   // Google Cloud Vision API のAPIキー(HTTPリファラー制限を必ず設定すること)
-  VISION_API_KEY: "YOUR_VISION_API_KEY",
+  VISION_API_KEY: "AIzaSyDdOcD5baNcd0GHmM3bxG5mvxHISNXZ5KA",
 
   // OAuth 2.0 クライアントID(種類: ウェブアプリケーション)
   GOOGLE_CLIENT_ID: "YOUR_OAUTH_CLIENT_ID.apps.googleusercontent.com",
